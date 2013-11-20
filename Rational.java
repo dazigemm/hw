@@ -1,5 +1,5 @@
 public class Rational {
-    public int top , bot;
+    private int top , bot;
 
     //constructors
     public Rational () {
@@ -23,17 +23,14 @@ public class Rational {
 	return (float) top / bot;
     }
     public void multiply (Rational num) {
-	String inp = num.toString();
-	int slash = inp.indexOf("/");
-	//b4 slash = p, aft = q
-	top *= Integer.parseInt(inp.substring(0, slash));
-	bot *= Integer.parseInt(inp.substring(slash+1));
+	
+	top *= num.top;
+	bot *= num.bot;
     }
     public void divide (Rational num) {
-	String inp = num.toString();
-	int slash = inp.indexOf("/");
-	bot *= Integer.parseInt(inp.substring(0, slash));
-	top *= Integer.parseInt(inp.substring(slash+1));
+
+	bot *= num.top;
+	top *= num.bot;
     }
 
     //phase II
